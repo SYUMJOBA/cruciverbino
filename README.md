@@ -28,9 +28,12 @@ Prima di risolvere un cruciverba, bisognerà crearlo no? Dunque iniziamo spiegan
                 'n' per andare a capo (newline)
                 't' per stambare 4 spazi (interpretazione lazzarona del 'tab')
                 '\' non è un carattere formattattore ma per evitare di togliere la possibilità di immettere '\' nella stringa, il programma interpreterà dobbia sbarra come una sbarra da stampare, anziché aspettarsi due caratteri formattattori
-                eccezzione: per stampare uno spazio, basta che tu scriva '_', senza il bisogno di una slash prima. Questo potrebbe essere cambiato in futuro se si preferisce poter scrivere gli underscore
+                's' per stampare uno spazio (space).
+                eccezzione: per rendere la stringa più leggibile, abbiamo introdotto un'alternativa, basta che tu scriva '_', senza il bisogno di una slash prima. Questo potrebbe essere cambiato in futuro se si preferisce poter scrivere gli underscore.
     - per muoverti puoi usare il 2, il 4, il 6 e l'8, proprio come faresti con un numpad, eccetto che dopo l'inserimento di ogni numero devi battere 'invio'
     - per salvare puoi premere 1 (e ti verrà chiesto il nome del file, dandoti anche la possibilità di mettere la tua estensione, inoltre avvisandoti se un file con lo stesso nome esiste già, chiedendoti una conferma prima di sovrascrivere un file già esistente) e per caricare un una schematica da un file puoi premere 0 (ti verrà chiesto nome con estensione del file da caricare, del resto farà tutto lui da solo).
+
+    P.S. Se preferisci puoi tranquillamente andare nel file e modificarlo tu, al posto della stringa formattatta dal programma, puoi tranquillamente scrivere normalmente, e il carattere interpreterà a dovere (occhio comunque con le sbarre e gli underscore!)
 
 Per RISOLVERE un cruciverba invece:
     - Scegli dal menù l'opzione di risolvere un cruciverba

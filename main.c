@@ -112,6 +112,8 @@ ____E D I T O R   M E N U_____\n\
 |   7. muovi cursore a coordinate\n\
 |   9. esci\n\
 |\n\
+|   10. mostra la stringa di descrizioni\n\
+|   11. riembi tutti i punti vuoti con cancelletti\n\
 |______Scelta: \
 ");
                 scanf(" %d", &sceneChoice);
@@ -290,6 +292,53 @@ ____E D I T O R   M E N U_____\n\
                     } else {
                         printf("File specificato non e' stato trovato, non e' stato possibile caricare le informazioni nella griglia\n");
                     }
+                    
+                } else if (sceneChoice == 10) {
+                    int desLen = strlen(cruciverba.descrizioni);
+                    if (desLen > 0)
+                    {
+                        for (int i = 0; i < strlen(cruciverba.descrizioni); i++)
+                            {
+                                if (cruciverba.descrizioni[i] == '\\')
+                                {
+                                    i++;
+                                    if (cruciverba.descrizioni[i] == 'n')
+                                    {
+                                        printf("\n");
+                                    } else if (cruciverba.descrizioni[i] == '\\')
+                                    {
+                                        printf("\\");
+                                    } else if (cruciverba.descrizioni[i] == 't')
+                                    {
+                                        printf("    ");
+                                    }
+                                } else if (cruciverba.descrizioni[i] == '_')
+                                {
+                                    printf(" ");
+                                } else
+                                {
+                                    printf("%c", cruciverba.descrizioni[i]);
+                                }
+                            }
+                    } else {
+                        printf("Non ci sono indizi da mostrare\n");
+                    }
+                    printf("\n\n");
+                } else if (sceneChoice == 11)
+                {
+                    for (int y = 0; y < cruciverba.maxY; y++)
+                    {
+                        for (int x = 0; x < cruciverba.maxX; x++)
+                        {
+                            if (cruciverba.grigliaCorretta[x][y] == '.')
+                            {
+                                cruciverba.grigliaCorretta[x][y] == '#';
+                            }
+                            
+                        }
+                        
+                    }
+                    
                     
                 } else
                 {
