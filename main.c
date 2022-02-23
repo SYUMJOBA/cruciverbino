@@ -113,7 +113,7 @@ Scelta: ");
     |   9. esci\n\
     |\n\
     |   10. mostra la stringa di descrizioni\n\
-    |   11. riembi tutti i punti vuoti con cancelletti\n\
+    |   11. riempi tutti i punti vuoti con cancelletti\n\
     |______Scelta: \
     ");
                     scanf(" %d", &sceneChoice);
@@ -146,20 +146,25 @@ Scelta: ");
                             printf("scrivendo i contenuti della griglia in %s\n", filename);
                             FILE *filepointer;
                             filepointer = fopen(filename, "w");
-                            for (int y = 0; y < 25; y++)
+                            if (filepointer != NULL)
                             {
-                                for (int x = 0; x < 25; x++)
+                                for (int y = 0; y < 25; y++)
                                 {
-                                    putc(cruciverba.grigliaCorretta[x][y], filepointer);
+                                    for (int x = 0; x < 25; x++)
+                                    {
+                                        putc(cruciverba.grigliaCorretta[x][y], filepointer);
+                                    }
+                                    putc( '\n', filepointer);
                                 }
-                                putc( '\n', filepointer);
+                                int desLen = strlen(cruciverba.descrizioni);
+                                for (int i = 0; i < desLen; i++)
+                                {
+                                    putc(cruciverba.descrizioni[i], filepointer);
+                                }
+                                fclose(filepointer);
+                            } else {
+                                printf("Non e' stato possibile aprire il file, riprova piu' tardi\n");
                             }
-                            int desLen = strlen(cruciverba.descrizioni);
-                            for (int i = 0; i < desLen; i++)
-                            {
-                                putc(cruciverba.descrizioni[i], filepointer);
-                            }
-                            fclose(filepointer);
                             
                         }
                     } else if (sceneChoice == 2)
@@ -334,9 +339,7 @@ Scelta: ");
                                 {
                                     cruciverba.grigliaCorretta[x][y] == '#';
                                 }
-                                
                             }
-                            
                         }
                         
                         
