@@ -14,7 +14,7 @@ struct Cruciverba{
 int main(){
     int choice;
     char strTempChoice[20];
-    while (running)
+    while (running) //main userEventLoop
     {
         printf("\
 _____C R U C I V E R B A____\n\
